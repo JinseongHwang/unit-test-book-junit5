@@ -1,0 +1,3 @@
+rootProject.name = 'unit-test-book-junit5'
+include 'chapter02'
+
