@@ -8,11 +8,11 @@ public class Store {
     private static final Map<Product, Integer> inventory = new HashMap<>();
 
     public boolean hasEnoughInventory(Product product, int quantity) {
-        return getInventory(product) < quantity;
+        return getInventory(product) >= quantity;
     }
 
     public void removeInventory(Product product, int quantity) {
-        if (hasEnoughInventory(product, quantity)) {
+        if (!hasEnoughInventory(product, quantity)) {
             throw new IllegalArgumentException("Not enough inventory");
         }
         inventory.merge(product, quantity, (src, val) -> src - val);
