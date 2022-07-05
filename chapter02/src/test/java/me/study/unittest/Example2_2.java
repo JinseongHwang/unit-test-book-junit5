@@ -1,0 +1,54 @@
+package me.study.unittest;
+
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.mockito.BDDMockito.given;
+import static org.mockito.Mockito.never;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
+
+@ExtendWith(MockitoExtension.class)
+public class Example2_2 {
+
+    @Mock
+    Store storeMock;
+
+    @BeforeEach
+    void cleanInventory() {
+        Store.clearForTest();
+    }
+
+    @Test
+    public void Purchase_succeeds_when_enough_inventory() {
+        // Given
+        given(storeMock.hasEnoughInventory(Product.Shampoo, 5)).willReturn(true);
+        final Customer customer = new Customer();
+
+        // When
+        final boolean success = customer.purchase(storeMock, Product.Shampoo, 5);
+
+        // Then
+        assertTrue(success);
+        verify(storeMock, times(1)).removeInventory(Product.Shampoo, 5);
+    }
+
+    @Test
+    public void Purchase_fails_when_not_enough_inventory() {
+        // Given
+        given(storeMock.hasEnoughInventory(Product.Shampoo, 5)).willReturn(false);
+        final Customer customer = new Customer();
+
+        // When
+        final boolean success = customer.purchase(storeMock, Product.Shampoo, 5);
+
+        // Then
+        assertFalse(success);
+        verify(storeMock, never()).removeInventory(Product.Shampoo, 5);
+    }
+}
