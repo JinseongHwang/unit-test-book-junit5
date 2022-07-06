@@ -3,9 +3,9 @@ package me.study.unittest;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.BDDMockito.given;
+import static org.mockito.BDDMockito.then;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.times;
-import static org.mockito.Mockito.verify;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -35,7 +35,7 @@ public class Example2_2 {
 
         // Then
         assertTrue(success);
-        verify(storeMock, times(1)).removeInventory(Product.Shampoo, 5);
+        then(storeMock).should(times(1)).removeInventory(Product.Shampoo, 5);
     }
 
     @Test
@@ -49,6 +49,6 @@ public class Example2_2 {
 
         // Then
         assertFalse(success);
-        verify(storeMock, never()).removeInventory(Product.Shampoo, 5);
+        then(storeMock).should(never()).removeInventory(Product.Shampoo, 5);
     }
 }
