@@ -1,4 +1,5 @@
 rootProject.name = 'unit-test-book-junit5'
 include 'chapter02'
 include 'chapter01'
+include 'chapter03'
 
