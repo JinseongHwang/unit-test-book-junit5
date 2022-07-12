@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class Store {
 
-    private static final Map<Product, Integer> inventory = new HashMap<>();
+    private final Map<Product, Integer> inventory = new HashMap<>();
 
     public boolean hasEnoughInventory(Product product, int quantity) {
         return getInventory(product) >= quantity;
@@ -24,9 +24,5 @@ public class Store {
 
     public int getInventory(Product product) {
         return inventory.get(product);
-    }
-
-    public static void clearForTest() {
-        inventory.clear();
     }
 }

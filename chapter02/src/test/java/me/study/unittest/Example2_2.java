@@ -7,7 +7,6 @@ import static org.mockito.BDDMockito.then;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.times;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
@@ -18,11 +17,6 @@ public class Example2_2 {
 
     @Mock
     Store storeMock;
-
-    @BeforeEach
-    void cleanInventory() {
-        Store.clearForTest();
-    }
 
     @Test
     public void Purchase_succeeds_when_enough_inventory() {
