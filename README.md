@@ -9,3 +9,7 @@
 - Java 11
 - JUnit 5
 - Gradle 7 (multi-module)
+
+## 관련 저장소
+
+- [AcornPublishing/unit-testing](https://github.com/AcornPublishing/unit-testing)
