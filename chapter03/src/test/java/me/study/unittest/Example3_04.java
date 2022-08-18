@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
-public class Example3_4 {
+public class Example3_04 {
 
     @Test
     void Sum_of_two_numbers() throws Exception {

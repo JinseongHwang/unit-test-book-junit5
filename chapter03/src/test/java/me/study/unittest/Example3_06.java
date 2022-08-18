@@ -4,11 +4,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
-public class Example3_6 {
+public class Example3_06 {
 
     private final Calculator sut;
 
-    public Example3_6() {
+    public Example3_06() {
         this.sut = new Calculator();
     }
 

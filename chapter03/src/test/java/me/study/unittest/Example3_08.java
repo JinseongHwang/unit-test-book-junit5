@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 
-public class Example3_8 {
+public class Example3_08 {
 
     @Test
     public void Purchase_succeeds_when_enough_inventory() {

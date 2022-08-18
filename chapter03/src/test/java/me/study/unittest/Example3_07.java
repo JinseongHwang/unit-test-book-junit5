@@ -6,12 +6,12 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 
-public class Example3_7 {
+public class Example3_07 {
 
     private final Store store;
     private final Customer sut;
 
-    public Example3_7() {
+    public Example3_07() {
         this.store = new Store();
         this.store.addInventory(Product.Shampoo, 10);
         this.sut = new Customer();
